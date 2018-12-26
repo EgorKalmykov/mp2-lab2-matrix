@@ -237,13 +237,10 @@ public:
 
   friend ostream& operator<<(ostream &out, const TMatrix &mt)
   {
-	  for (int i = 0; i < mt.Size; i++) {
-		  out << mt.pVector[i];
-		  for (int j = 0; j < mt.Size - mt.pVector[i].GetSize(); j++)
-			  out << "0\t";
+	  for (int i = 0; i < mt.Size; i++)
 
-		  out << '\n';
-	  }
+		  out << mt.pVector[i] << endl;
+
 	  return out;
   }
 };
