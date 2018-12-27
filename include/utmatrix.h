@@ -230,17 +230,23 @@ public:
   // ввод / вывод
   friend istream& operator>>(istream &in, TMatrix &mt)
   {
-    for (int i = 0; i < mt.Size; i++)
-      in >> mt.pVector[i];
+	  for (int i = 0; i < mt.Size; i++)
+	  {
+		  in >> mt.pVector[i];
+		 
+
+	  }
     return in;
   };
 
   friend ostream& operator<<(ostream &out, const TMatrix &mt)
   {
 	  for (int i = 0; i < mt.Size; i++)
-
-		  out << mt.pVector[i] << endl;
-
+	  {
+		  for (int j = 0; j < mt.Size - mt.pVector[i].GetSize(); j++) out << "0\t";
+		  out << mt.pVector[i];
+		  out << "\n";
+	  }
 	  return out;
   }
 };
